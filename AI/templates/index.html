@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Multitask Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>AI Multitask Platform</h1>
+        <p>AI-powered tools for translation, transcription, and more.</p>
+    </header>
+
+    <nav>
+        <button class="tab-button active" data-tab="audio">Audio to Text</button>
+        <button class="tab-button" data-tab="video">Video to Text</button>
+        <button class="tab-button" data-tab="realtime">Real-Time Transcription</button>
+        <button class="tab-button" data-tab="youtube">YouTube to Text</button>
+        <button class="tab-button" data-tab="tts">Text to Speech</button>
+    </nav>
+
+    <main>
+        <!-- Audio to Text -->
+        <section id="audio" class="tab-content active">
+            <h2>Audio to Text</h2>
+            <input type="file" id="audioFile" accept="audio/*">
+            <button id="transcribeAudio">Transcribe</button>
+            <select id="audioLanguage">
+                <option value="en">English</option>
+                <option value="ur">Urdu</option>
+                <option value="hi">Hindi</option>
+                <option value="fr">French</option>
+            </select>
+            <button id="translateAudio">Translate</button>
+            <div id="audioResult"></div>
+        </section>
+
+        <!-- Video to Text -->
+        <section id="video" class="tab-content">
+            <h2>Video to Text</h2>
+            <input type="file" id="videoFile" accept="video/*">
+            <button id="transcribeVideo">Transcribe</button>
+            <select id="videoLanguage">
+                <option value="en">English</option>
+                <option value="ur">Urdu</option>
+                <option value="hi">Hindi</option>
+                <option value="fr">French</option>
+            </select>
+            <button id="translateVideo">Translate</button>
+            <div id="videoResult"></div>
+        </section>
+
+        <!-- Real-Time Transcription -->
+        <section id="realtime" class="tab-content">
+            <h2>Real-Time Transcription</h2>
+            <button id="startRealtime">Start</button>
+            <button id="stopRealtime">Stop</button>
+            <select id="realtimeLanguage">
+                <option value="en">English</option>
+                <option value="ur">Urdu</option>
+                <option value="hi">Hindi</option>
+                <option value="fr">French</option>
+            </select>
+            <button id="translateRealtime">Translate</button>
+            <div id="realtimeResult"></div>
+        </section>
+
+        <!-- YouTube to Text -->
+        <section id="youtube" class="tab-content">
+            <h2>YouTube Video to Text</h2>
+            <input type="text" id="youtubeLink" placeholder="Enter YouTube URL">
+            <button id="transcribeYouTube">Transcribe</button>
+            <select id="youtubeLanguage">
+                <option value="en">English</option>
+                <option value="ur">Urdu</option>
+                <option value="hi">Hindi</option>
+                <option value="fr">French</option>
+            </select>
+            <button id="translateYouTube">Translate</button>
+            <div id="youtubeResult"></div>
+        </section>
+
+        <!-- Text to Speech -->
+        <section id="tts" class="tab-content">
+            <h2>Text to Speech</h2>
+            <textarea id="textToSpeech" placeholder="Enter text"></textarea>
+            <button id="convertToSpeech">Convert</button>
+            <select id="ttsLanguage">
+                <option value="en">English</option>
+                <option value="ur">Urdu</option>
+                <option value="hi">Hindi</option>
+                <option value="fr">French</option>
+            </select>
+        </section>
+    </main>
+
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

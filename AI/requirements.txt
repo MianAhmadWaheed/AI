@@ -1,0 +1,10 @@
+Flask
+whisper
+deepgram-sdk
+youtube-dl
+streamlit
+deepgram-sdk
+yt-dlp
+gtts
+libretranslatepy
+ffmpeg-python
